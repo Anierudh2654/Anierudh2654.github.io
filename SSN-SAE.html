@@ -32,8 +32,8 @@
         }
 
         .logo img {
-            height: 120px;
-            width: 120px;
+            height: 80px; /* Adjusted for smaller screens */
+            width: 80px; /* Adjusted for smaller screens */
             border-radius: 50%;
             border: 5px solid red;
         }
@@ -41,6 +41,7 @@
         nav ul {
             list-style: none;
             display: flex;
+            flex-wrap: wrap; /* Allow wrapping */
         }
 
         nav ul li {
@@ -72,11 +73,10 @@
             width: 100%;
             height: 100%;
             background: url('img1.jpg') no-repeat center center/cover;
-            border-radius: 20px; /* Added border radius */
+            border-radius: 20px;
             z-index: -1;
         }
 
-        /* Smooth Background Image Overlay */
         .hero::after {
             content: "";
             position: absolute;
@@ -119,7 +119,7 @@
         }
 
         section:hover {
-            transform: scale(1.03); /* Increased slightly for better effect */
+            transform: scale(1.03);
             background-color: rgba(0, 0, 0, 0.85);
             border-color: goldenrod;
             box-shadow: 0 0 25px rgba(218, 165, 32, 0.8);
@@ -140,12 +140,13 @@
             display: flex;
             justify-content: center;
             gap: 20px;
-            flex-wrap: wrap; /* Added for responsiveness */
+            flex-wrap: wrap;
         }
 
         .gallery img {
-            width: 600px;
-            height: 600px;
+            width: 100%; /* Make images responsive */
+            max-width: 600px; /* Limit max width */
+            height: auto; /* Maintain aspect ratio */
             border-radius: 150px;
             border: 5px solid gray;
             transition: transform 0.3s ease, border-color 0.3s ease;
@@ -168,24 +169,17 @@
             padding: 20px;
         }
 
-        .sponsor-container {
-            display: grid;
-            grid-template-columns: repeat(1, 1fr);
-            gap: 20px;
-            justify-content: center;
-            align-items: center;
-        }
-
         .sponsors-gallery {
             display: flex;
             justify-content: center;
             align-items: center;
-            gap: 30px; /* Adjust spacing between images */
-            flex-wrap: wrap; /* Ensures responsiveness */
+            gap: 30px;
+            flex-wrap: wrap;
         }
 
         .sponsors-gallery img {
-            width: 1000px; /* Increase width */
+            width: 100%; /* Make images responsive */
+            max-width: 300px; /* Limit max width */
             height: auto; /* Maintain aspect ratio */
             border-radius: 10px;
             transition: transform 0.3s ease, border-color 0.3s ease;
@@ -200,35 +194,31 @@
         /* Responsive Styles */
         @media (max-width: 768px) {
             .hero h1 {
-                font-size: 60px; /* Adjusted for smaller screens */
+                font-size: 60px;
             }
 
             .hero p {
-                font-size: 18px; /* Adjusted for smaller screens */
-            }
-
-            .gallery img {
-                width: 100%; /* Make images responsive */
-                height: auto; /* Maintain aspect ratio */
-                max-width: 300px; /* Limit max width */
-            }
-
-            .sponsors-gallery img {
-                width: 100%; /* Make images responsive */
-                height: auto; /* Maintain aspect ratio */
-                max-width: 300px; /* Limit max width */
+                font-size: 18px;
             }
 
             section {
-                padding: 20px; /* Adjust padding for smaller screens */
+                padding: 20px;
             }
 
             nav ul {
                 flex-direction: column; /* Stack nav items vertically */
+                align-items: center; /* Center items */
             }
 
             nav ul li {
                 margin: 10px 0; /* Adjust margin for vertical layout */
+            }
+        }
+
+        /* Hide header on very small screens */
+        @media (max-width: 800px) {
+            header {
+                display: none; /* Hide header */
             }
         }
     </style>
