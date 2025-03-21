@@ -25,7 +25,6 @@
             justify-content: space-between;
             align-items: center;
             padding: 20px;
-            /*background-color: black;*/
             position: fixed;
             width: 100%;
             top: 0;
@@ -66,34 +65,32 @@
         }
 
         .hero::before {
-    content: "";
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: url('img1.jpg') no-repeat center center/cover;
-    z-index: -1;
-}
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: url('img1.jpg') no-repeat center center/cover;
+            border-radius: 20px; /* Added border radius */
+            z-index: -1;
+        }
 
-/* Smooth Background Image Overlay */
-.hero::after {
-    content: "";
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-color: rgba(0, 0, 0, 0.6);
-    transition: background-color 1s ease-in-out;
-}
+        /* Smooth Background Image Overlay */
+        .hero::after {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.6);
+            transition: background-color 1s ease-in-out;
+        }
 
-.hero:hover::after {
-    background-color: rgba(0, 0, 0, 0.3);
-}
-
-
-        
+        .hero:hover::after {
+            background-color: rgba(0, 0, 0, 0.3);
+        }
 
         .hero h1 {
             font-size: 100px;
@@ -108,29 +105,25 @@
         }
 
         section {
-    position: relative;
-    width: 90%;
-    margin: 50px auto;
-    padding: 50px;
-    background-color: rgba(0, 0, 0, 0.7);
-    border-radius: 20px;
-    border: 5px solid gray;
-    transition: background-color 0.8s ease-in-out, border-color 0.8s ease-in-out, 
-                box-shadow 0.8s ease-in-out, transform 0.8s ease-in-out;
-    margin-top: 20px;
-    will-change: background-color, border-color, box-shadow, transform;
-}
+            position: relative;
+            width: 90%;
+            margin: 50px auto;
+            padding: 50px;
+            background-color: rgba(0, 0, 0, 0.7);
+            border-radius: 20px;
+            border: 5px solid gray;
+            transition: background-color 0.8s ease-in-out, border-color 0.8s ease-in-out, 
+                        box-shadow 0.8s ease-in-out, transform 0.8s ease-in-out;
+            margin-top: 20px;
+            will-change: background-color, border-color, box-shadow, transform;
+        }
 
-section:hover {
-    transform: scale(1.03); /* Increased slightly for better effect */
-    background-color: rgba(0, 0, 0, 0.85);
-    border-color: goldenrod;
-    box-shadow: 0 0 25px rgba(218, 165, 32, 0.8);
-}
-
-
-
-
+        section:hover {
+            transform: scale(1.03); /* Increased slightly for better effect */
+            background-color: rgba(0, 0, 0, 0.85);
+            border-color: goldenrod;
+            box-shadow: 0 0 25px rgba(218, 165, 32, 0.8);
+        }
 
         h2 {
             font-size: 36px;
@@ -147,6 +140,7 @@ section:hover {
             display: flex;
             justify-content: center;
             gap: 20px;
+            flex-wrap: wrap; /* Added for responsiveness */
         }
 
         .gallery img {
@@ -170,37 +164,73 @@ section:hover {
         }
 
         .sponsors {
-        text-align: center;
-        padding: 20px;
-    }
-    .sponsor-container {
-        display: grid;
-        grid-template-columns: repeat(1, 1fr);
-        gap: 20px;
-        justify-content: center;
-        align-items: center;
-    }
-    .sponsors-gallery {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    gap: 30px; /* Adjust spacing between images */
-    flex-wrap: wrap; /* Ensures responsiveness */
-}
+            text-align: center;
+            padding: 20px;
+        }
 
-.sponsors-gallery img {
-    width: 1000px; /* Increase width */
-    height: auto; /* Maintain aspect ratio */
-    border-radius: 10px;
-    transition: transform 0.3s ease, border-color 0.3s ease;
-    border: 3px solid gray;
-}
+        .sponsor-container {
+            display: grid;
+            grid-template-columns: repeat(1, 1fr);
+            gap: 20px;
+            justify-content: center;
+            align-items: center;
+        }
 
-.sponsors-gallery img:hover {
-    transform: scale(1.1);
-    border-color: goldenrod;
-}
+        .sponsors-gallery {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 30px; /* Adjust spacing between images */
+            flex-wrap: wrap; /* Ensures responsiveness */
+        }
 
+        .sponsors-gallery img {
+            width: 1000px; /* Increase width */
+            height: auto; /* Maintain aspect ratio */
+            border-radius: 10px;
+            transition: transform 0.3s ease, border-color 0.3s ease;
+            border: 3px solid gray;
+        }
+
+        .sponsors-gallery img:hover {
+            transform: scale(1.1);
+            border-color: goldenrod;
+        }
+
+        /* Responsive Styles */
+        @media (max-width: 768px) {
+            .hero h1 {
+                font-size: 60px; /* Adjusted for smaller screens */
+            }
+
+            .hero p {
+                font-size: 18px; /* Adjusted for smaller screens */
+            }
+
+            .gallery img {
+                width: 100%; /* Make images responsive */
+                height: auto; /* Maintain aspect ratio */
+                max-width: 300px; /* Limit max width */
+            }
+
+            .sponsors-gallery img {
+                width: 100%; /* Make images responsive */
+                height: auto; /* Maintain aspect ratio */
+                max-width: 300px; /* Limit max width */
+            }
+
+            section {
+                padding: 20px; /* Adjust padding for smaller screens */
+            }
+
+            nav ul {
+                flex-direction: column; /* Stack nav items vertically */
+            }
+
+            nav ul li {
+                margin: 10px 0; /* Adjust margin for vertical layout */
+            }
+        }
     </style>
 </head>
 <body>
@@ -254,15 +284,12 @@ section:hover {
             <img src="sponsor1.png" alt="Sponsors">
             <img src="sponsor2.png" alt="Sponsors">
             <img src="sponsor3.png" alt="Sponsors">
-            
         </div>
     </section>
-    
     
     <section id="contact">
         <h2>Contact Us</h2>
         <p>Email: saeclub@ssn.edu.in</p>
-        
     </section>
     
     <footer>
