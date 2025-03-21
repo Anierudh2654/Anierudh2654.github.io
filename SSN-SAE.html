@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SSN-SAE</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            background-color: #111;
+            color: white;
+            padding-top: 140px;
+        }
+
+        header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px;
+            /*background-color: black;*/
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .logo img {
+            height: 120px;
+            width: 120px;
+            border-radius: 50%;
+            border: 5px solid red;
+        }
+
+        nav ul {
+            list-style: none;
+            display: flex;
+        }
+
+        nav ul li {
+            margin: 0 15px;
+        }
+
+        nav ul li a {
+            color: white;
+            text-decoration: underline;
+            font-size: 20px;
+        }
+
+        .hero {
+            position: relative;
+            height: 200vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            padding-top: 150px;
+            text-align: center;
+        }
+
+        .hero::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: url('img1.jpg') no-repeat center center/cover;
+    z-index: -1;
+}
+
+/* Smooth Background Image Overlay */
+.hero::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.6);
+    transition: background-color 1s ease-in-out;
+}
+
+.hero:hover::after {
+    background-color: rgba(0, 0, 0, 0.3);
+}
+
+
+        
+
+        .hero h1 {
+            font-size: 100px;
+            font-weight: bold;
+            text-shadow: 3px 3px 5px black;
+        }
+
+        .hero p {
+            font-size: 22px;
+            font-weight: bold;
+            text-shadow: 2px 2px 4px black;
+        }
+
+        section {
+    position: relative;
+    width: 90%;
+    margin: 50px auto;
+    padding: 50px;
+    background-color: rgba(0, 0, 0, 0.7);
+    border-radius: 20px;
+    border: 5px solid gray;
+    transition: background-color 0.8s ease-in-out, border-color 0.8s ease-in-out, 
+                box-shadow 0.8s ease-in-out, transform 0.8s ease-in-out;
+    margin-top: 20px;
+    will-change: background-color, border-color, box-shadow, transform;
+}
+
+section:hover {
+    transform: scale(1.03); /* Increased slightly for better effect */
+    background-color: rgba(0, 0, 0, 0.85);
+    border-color: goldenrod;
+    box-shadow: 0 0 25px rgba(218, 165, 32, 0.8);
+}
+
+
+
+
+
+        h2 {
+            font-size: 36px;
+            text-shadow: 2px 2px 4px black;
+            margin-bottom: 20px;
+        }
+
+        p {
+            font-size: 24px;
+            line-height: 1.6;
+        }
+
+        .gallery {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+        }
+
+        .gallery img {
+            width: 600px;
+            height: 600px;
+            border-radius: 150px;
+            border: 5px solid gray;
+            transition: transform 0.3s ease, border-color 0.3s ease;
+        }
+
+        .gallery img:hover {
+            transform: scale(1.05);
+            border-color: goldenrod;
+        }
+
+        footer {
+            background: black;
+            padding: 20px;
+            margin-top: 20px;
+            color: white;
+        }
+
+        .sponsors {
+        text-align: center;
+        padding: 20px;
+    }
+    .sponsor-container {
+        display: grid;
+        grid-template-columns: repeat(1, 1fr);
+        gap: 20px;
+        justify-content: center;
+        align-items: center;
+    }
+    .sponsors-gallery {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 30px; /* Adjust spacing between images */
+    flex-wrap: wrap; /* Ensures responsiveness */
+}
+
+.sponsors-gallery img {
+    width: 1000px; /* Increase width */
+    height: auto; /* Maintain aspect ratio */
+    border-radius: 10px;
+    transition: transform 0.3s ease, border-color 0.3s ease;
+    border: 3px solid gray;
+}
+
+.sponsors-gallery img:hover {
+    transform: scale(1.1);
+    border-color: goldenrod;
+}
+
+    </style>
+</head>
+<body>
+    <header>
+        <div class="logo">
+            <img src="img2.jpg" alt="SSN-SAE Logo">
+        </div>
+        <nav>
+            <ul>
+                <li><a href="#about">About Us</a></li>
+                <li><a href="#mission">Mission</a></li>
+                <li><a href="#vision">Vision</a></li>
+                <li><a href="#gallery">Gallery</a></li>
+                <li><a href="#sponsors">Sponsors</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+    
+    <section class="hero">
+        <h1>Welcome to SSN-SAE</h1>
+        <p>Official racing team of SSN College of Engineering</p>
+    </section>
+    
+    <section id="about">
+        <h2>About Us</h2>
+        <p>The official student-led automotive engineering team of SSN College of Engineering. We are a passionate group of innovators, designers, and engineers committed to pushing the boundaries of automotive technology. Specializing in quad bikes, go-karts, and modified vehicles, we apply cutting-edge engineering principles to design and fabricate high-performance machines for national-level competitions.</p>
+    </section>
+
+    <section id="mission">
+        <h2>Mission</h2>
+        <p>Fueling passion, engineering innovation! We design, build, and race high-performance vehicles, pushing the limits of technology while shaping future automotive leaders.</p>
+    </section>
+    
+    <section id="vision">
+        <h2>Vision</h2>
+        <p>To be a leading collegiate automotive team recognized for engineering excellence, innovation, and sustainability. We strive to inspire future engineers, contribute to the advancement of mobility solutions, and create a legacy of success in national and international SAE competitions.</p>
+    </section>
+    
+    <section id="gallery">
+        <h2>Gallery</h2>
+        <div class="gallery">
+            <img src="img3.jpg" alt="Gallery Image 1">
+            <img src="img4.jpg" alt="Gallery Image 2">
+        </div>
+    </section>
+
+    <section id="sponsors">
+        <h2>Our Sponsors</h2>
+        <div class="sponsors-gallery">
+            <img src="sponsor1.png" alt="Sponsors">
+            <img src="sponsor2.png" alt="Sponsors">
+            <img src="sponsor3.png" alt="Sponsors">
+            
+        </div>
+    </section>
+    
+    
+    <section id="contact">
+        <h2>Contact Us</h2>
+        <p>Email: saeclub@ssn.edu.in</p>
+        
+    </section>
+    
+    <footer>
+        <p>&copy; 2025 SSN SAE. All Rights Reserved.</p>
+    </footer>
+</body>
+</html>
